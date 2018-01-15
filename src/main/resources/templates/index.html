@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="css/bootstrap.css" />
+<title>Gamestudio</title>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+
+				<h1 id="gamestudio">Gamestudio 2018</h1>
+
+				<br />
+			</div>
+			<div class="col-3"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-6">
+				<h5>Minesweeper</h5>
+
+				<br /> <a href="http://localhost:8080/mines.html"> <img
+					src="images/mines.jpg" alt="mines" width="200" height="200" />
+				</a>
+			</div>
+			<div class="col-6">
+				<h5>Puzzle 15</h5>
+				<br /> <a href="http://localhost:8080/puzzle.html"> <img
+					src="images/puzzle.jpg" alt="puzzles" width="200" />
+				</a>
+			</div>
+		</div>
+		
+		<span th:if='${@userController.Logged}'>
+			<div class="row">
+			<div class="col-3"></div>
+			<div class="col-9">
+			<h6>Favorite games</h6>
+			</div>
+				<div class="col-3"></div>
+				<div class="col-9">
+					<table>
+						<th th:each='favourite : ${favourite}' >
+						<tr>
+							<a th:href='${favourite.game}'><img	th:src='${"images/" + favourite.game + ".jpg" }' width='70' height='70'/> </a>
+						</tr>
+						</th>
+					</table>
+
+				</div>
+			</div>
+	</span>
+
+		<div class="row">
+			<div class="col-3">
+				<hr />
+			</div>
+			<div class="col-6" th:replace="footer::nice_footer"></div>
+			<div class="col-3">
+				<hr />
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous">
+		
+	</script>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+</body>
+</html>

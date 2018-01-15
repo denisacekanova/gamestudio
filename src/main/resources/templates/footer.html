@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="sk">
+
+<div th:fragment="nice_footer">
+<hr/>
+<a href='http://localhost:8080/'>GameStudio 2018, Denisa Cekanova</a><br/>
+<span th:if='${@userController.Logged}'>
+Logged as <span th:text='${@userController.LoggedPlayer?.Login}'/><br/>
+<a href="/logout">Logout</a>
+</span>
+
+<span th:if='${not @userController.Logged}'>
+<a href="/user">Log in</a>
+</span>
+
+
+</div>
+
+</html>

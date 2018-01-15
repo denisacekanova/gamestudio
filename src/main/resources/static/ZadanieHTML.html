@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/novy.css" media="screen">
+<link rel="stylesheet" href="css/normalize.css">
+<title>Moje oblubene hry</title>
+
+</head>
+<body>
+
+ <header>
+ <h1> Moje obľúbené hry </h1>
+ </header>
+ 
+ <nav id="menu"> 
+ 	<ul>
+ 		<li>
+ 			<a href="#uvod">Ahojte !</a>
+ 		</li>
+ 		<li>
+ 			<a href="#hry">Moje obľúbené hry !</a>
+ 		</li>
+ 		<li>
+ 			<a href="#score">Zadaj skóre pre hru !</a>
+ 		</li>
+ 		<li>
+ 			<a href="#comment">Pridaj komentár ku hre !</a>
+ 		</li>
+ 		<li>
+ 			<a href="#rating">Pridaj hodnotenie hry !</a>
+ 		</li>
+ 	</ul>
+ </nav>
+ 
+ <main>
+ 
+ 	<article id="uvod">
+ 		<h2> Ahojte ! </h2>
+ 		<p> Vítam Vás na stránke mojích <b><i> obľúbených hier.</i></b>
+ 			V nej Vám predstavím moje dve najobľúbenejšie hry, kamene a míny. Taktiež si po dohratí
+ 			hry budete môcť dosiahnuté skóre prostredníctvom <a href="#skore"><i>formulára</i></a>
+ 			uložiť. Prajem veľa zábavy v hrách a veľa šťastia pri dosahovaní najvyšších skóre.
+ 		</p>
+ 	</article>
+ 		
+ 	<article id="hry"> 
+ 		<h2> Toto sú moje obľúbené hry !</h2>
+ 		<br>
+ 		<table id="tableHry">
+			<tbody>
+				 <tr>
+				 
+				 	 <th> <a href="http://localhost:8080/mines.html">
+ 							<img src="images/mines.jpg" alt="mines" width="200" height="200">
+						</a>
+					</th>
+				 	
+				 	<th> <a href="http://localhost:8080/puzzle.html">
+  							<img src="images/puzzles.jpg" alt="puzzles" width="200" >
+						</a>
+						
+					</th>
+					
+				  </tr>
+				  
+			  </tbody>
+		</table>
+	</article>	
+	
+	<article id="gameSelect">
+		<h2> Ako sa ti páčili hry? </h2>
+		<br>
+		
+		<form id="selectGame">
+			<label for="hraVyber"> Vyber si hru    
+				<br>
+				<br>  
+			</label>
+				<select id="hraVyber" onchange="valueFromSelect()" name="hra" size=1>
+					<option value="m" selected> míny</option>
+					<option value="p"> kamene</option>
+				</select>
+		</form>	
+			<br>
+			<br>
+			
+	</article>		
+	<article id="score">
+	<h2> Tu zadaj dosiahnuté skóre hry ! </h2>
+		<table id="tableScore">
+			<tbody>
+				 <tr>
+				  	 <th> 
+		<form id="scoreView">
+			
+			<label>Užívateľské meno
+			<br>
+			<br>
+           		 <input type="text" id="userName" placeholder="Zadaj svoje užívateľské meno"/>
+       		</label>
+        
+        <br>
+        <br>
+        <br>
+        
+        	<label>Skóre
+        	<br>
+        	<br>
+          		<input type="text" id="newScore" placeholder="Zadaj svoje dosiahnuté skóre"/>
+       		</label>
+        
+        <br>
+        <br>
+        <br>
+        
+       		<button type="button" id="SaveScore">Poslať</button>
+        </form>
+        </th>
+        <th>
+        
+        <div id="tableScore"></div>
+        
+        </th>
+        </tr>
+        </tbody>
+        </table>
+        
+	</article>
+	
+	<article id="comment">
+		<h2> Tu zadaj komentár ku hre ! </h2>
+		<br>
+		<table id="tableComment">
+			<tbody>
+				 <tr>
+				  	 <th> 
+		<form id="commentView">
+			<label>Užívateľské meno
+			<br>
+			<br>
+           		 <input type="text" id="userName" placeholder="Zadaj svoje užívateľské meno"/>
+       		</label>
+        
+        <br>
+        <br>
+        <br>
+        
+        	<label>Komentár
+        	<br>
+        	<br>
+          		<input type="text" id="newComment" placeholder="Zadaj komentár ku hre" style="height:5em;width:15em;"/>
+       		</label>
+        
+        <br>
+        <br>
+        
+       		<button type="button" id="SaveComment">Poslať</button>
+           </form>
+        </th>
+        <th>
+        
+        <div id="tableComment"></div>
+        
+        </th>
+        </tr>
+        </tbody>
+        </table>
+        
+	</article>
+	<article id="rating">
+	<h2> Tu zadaj rating hry ! </h2>
+	<br>
+		<table id="tableRating">
+			<tbody>
+				 <tr>
+				  	 <th> 
+		<form id="ratingView">
+	
+		<label>Užívateľské meno
+			<br>
+			<br>
+           		 <input type="text" id="userName3" placeholder="Zadaj svoje užívateľské meno"/>
+       		</label>
+       		<br>
+			<br>
+		<label for="ratingVyber"> Vyber hodnotenie hry    
+				<br>
+				<br>  
+			</label>
+				<select id="ratingVyber" onchange="valueFromSelectRating()" name="rating" size=1>
+					<option value="1" selected> 1</option>
+					<option value="2"> 2</option>
+					<option value="3"> 3</option>
+					<option value="4"> 4</option>
+					<option value="5"> 5</option>
+					<option value="6"> 6</option>
+					<option value="7"> 7</option>
+					<option value="8"> 8</option>
+					<option value="9"> 9</option>
+					<option value="10"> 10</option>
+				</select>
+				<br>
+				<br>
+				<button type="button" id="SaveRating">Poslať</button>
+			</form>
+		</th>
+       <th>
+        
+        <div id="textRating"></div>
+        
+        </th>
+        </tr>
+        </tbody>
+        </table>
+        </article>
+		
+  </main>	
+  
+  
+ <script id="tmplScore" type="text/template">
+    <ol>
+    {{#.}}
+    <li>{{username}}  {{value}}</li>
+    {{/.}}
+    </ol>
+</script>
+
+<script id="tmplComment" type="text/template">
+    <table>
+    <tr><th>Meno</th><th>Komentár</th></tr>
+    {{#.}}
+    <tr><td>{{username}}</td><td>{{content}}</td></tr>
+    {{/.}}
+    </table>
+</script>
+
+<script id="tmplRating" type="text/template">
+    
+    {{#.}}
+   {{game}}   {{value}}
+    {{/.}}
+  
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+ </script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
+
+
+<script src="js/ZadanieHTML.js"></script>
+
+</body>
+</html>
