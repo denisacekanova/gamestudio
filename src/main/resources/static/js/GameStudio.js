@@ -6,7 +6,7 @@ var email = document.getElementById("email");
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Password Don't Match");
+    confirm_password.setCustomValidity("Passwords Don't Match");
   }    else {
     	confirm_password.setCustomValidity('');   	
     }

@@ -71,7 +71,7 @@ public class MinesController {
 		return "mines";
 	}
 
-	@RequestMapping("/MinesComment")
+	@RequestMapping("/addCommentMines")
 	public String comment(@RequestParam(value = "newComment", required = false) String newComment, Model model) {
 
 		commentService.addComment(new Comment(userController.getLoggedPlayer().getLogin(), "mines", newComment, date));
@@ -81,7 +81,7 @@ public class MinesController {
 		return "mines";
 	}
 
-	@RequestMapping("/MinesRating")
+	@RequestMapping("/addRatingMines")
 	public String rating(@RequestParam(value = "Rating", required = false) String rating, Model model) {
 		ratingService
 				.setRating(new Rating(userController.getLoggedPlayer().getLogin(), "mines", Integer.parseInt(rating)));
@@ -107,7 +107,8 @@ public class MinesController {
 		model.addAttribute("comments", commentService.getComments("mines"));
 		model.addAttribute("rating", ratingService.getAverageRating("mines"));
 		if (userController.isLogged()) {
-			model.addAttribute("favourite", favouriteService.isFavourite( new Favourite(userController.getLoggedPlayer().getLogin(), "mines")));
+			model.addAttribute("favourite",
+					favouriteService.isFavourite(new Favourite(userController.getLoggedPlayer().getLogin(), "mines")));
 		}
 	}
 
@@ -122,9 +123,9 @@ public class MinesController {
 				field.openTile(Integer.parseInt(row), Integer.parseInt(column));
 
 			if (field.getState() == GameState.FAILED) {
-				message = "Prehral si";
+				message = "You Lose !";
 			} else if (field.getState() == GameState.SOLVED) {
-				message = "Vyhral si";
+				message = "You Won ! Your score is " + ((int) (System.currentTimeMillis() - startTime) / 1000) + "!";
 				if (userController.isLogged())
 					scoreService.addScore(new Score(userController.getLoggedPlayer().getLogin(), "mines",
 							((int) (System.currentTimeMillis() - startTime) / 1000)));
@@ -134,7 +135,7 @@ public class MinesController {
 				}
 			}
 		} catch (NumberFormatException e) {
-			
+
 			createField();
 		}
 
@@ -146,7 +147,7 @@ public class MinesController {
 	public String render() {
 		StringBuilder sb = new StringBuilder();
 
-		sb.append("<table id='TableMines'>\n");
+		sb.append("<table class='tableMines'>\n");
 
 		for (int row = 0; row < field.getRowCount(); row++) {
 			sb.append("<tr>\n");

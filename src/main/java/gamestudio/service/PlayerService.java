@@ -8,4 +8,6 @@ public interface PlayerService {
 
 	Player login(String login, String password);
 
+	boolean isLogin(String login);
+
 }

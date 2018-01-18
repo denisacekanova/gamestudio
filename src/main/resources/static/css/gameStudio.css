@@ -1,1 +1,156 @@
-@charset "UTF-8";
+
+/* smiley rating style */
+
+.rating {
+	font-size: 20px;
+	height: 70px;
+	line-height: 70px;
+}
+
+.rating1:hover:before {
+   content: "🤒";
+   position: absolute;
+    font-size: 30px;
+  margin-left: -10px;
+  -webkit-transform: scale(1.2);
+    -webkit-transform: rotate(30deg);
+}
+.rating2:hover:before {
+   content: "😣";
+   position: absolute;
+    font-size: 30px;
+  margin-left: -10px;
+    -webkit-transform: rotate(15deg);
+}
+.rating3:hover:before {
+   content: "😐";
+   position: absolute;
+    font-size: 30px;
+  margin-left: -10px;
+}
+.rating4:hover:before {
+   content: "😎";
+   position: absolute;
+  font-size: 30px;
+  margin-left: -10px;
+    -webkit-transform: rotate(-15deg);
+}
+.rating5:hover:before {
+   content: "🤑";
+   position: absolute;
+    font-size: 30px;
+  margin-left: -10px;
+  -webkit-transform: rotate(-30deg);
+}
+ 
+ /* index.html*/
+ 
+h1#gamestudio {
+    orphans: 3;
+    widows: 3;
+    text-align: center;
+    text-color : #0033cc;
+	margin-top: 0;
+ 	margin-bottom: 0.5rem;
+  	
+}
+  
+  
+  /* puzzle.html */
+  
+  .tablePuzzle {
+  
+    border-collapse: separate !important;
+    border-radius: 9px;
+    width: 50%;
+    height: 50%;
+    text-align: center; 
+    font-size: 200%;
+    border: 2px solid #237df8;
+    background-color : white;
+    table-layout: fixed;
+    
+}
+  .tablePuzzle tr {
+  
+   background-color : white;
+  
+  }  
+  
+  /* mines.html */
+  
+  .tableMines {
+    border-collapse: collapse;
+    width: 50%;
+    height: 50%;
+    text-align: center; 
+    
+}
+  
+    /* puzzleImage.html */
+       
+    .tablePuzzleImage {
+  	border-collapse: separate !important;
+    border-radius: 15px;
+    background-color : white;
+     
+}
+    .tablePuzzleImage img{
+   
+    width:100%;
+    height: 50%;
+    border-radius: 0px;
+
+}
+      
+    /* comment */
+    
+    .comment_table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;   
+}
+
+	.comment_table th{
+	font-weight: 900;
+    color: #0056b3;
+    text-align: center; 
+    }
+
+/* score */
+
+
+	.score_table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    
+}
+
+ 	.score_table th {
+	font-weight: 900;
+    color: #0056b3;
+    text-align: center; 
+    }
+
+
+
+    /* rating */
+    
+  .avgRating {
+  
+  	text-align: left;
+	margin-top: 0;
+ 	margin-bottom: 1rem;
+  	text-align: center;
+  	color: #668cff;
+  	font-style: italic;
+  
+  }
+
+
+
+
+
+
+

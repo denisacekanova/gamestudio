@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 <meta charset="UTF-8"></meta>
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="css/gameStudio.css" />
-<title>Puzzle</title>
+<title>PuzzleImage</title>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="col-6">
-				<a href='/puzzle'>New game</a>
+				<a href='/puzzleImage'>New game</a>
 			</div>
 			<div class="col-6"></div>
 		</div>
 		<div class="row">
 			<div class="col-4">
-				<p th:utext='${puzzleController.render()}' />
-				<p th:utext='${puzzleController.message}' />
+				<p th:utext='${puzzleImageController.render()}' />
 				<br />
-				 <span th:if='${@userController.Logged}'>				
-					<div class="rating">
-						<a href='/addRatingPuzzle?value=1' class="rating1">😶</a> 
-						<a href='/addRatingPuzzle?value=2' class="rating2">😶</a>
-						<a href='/addRatingPuzzle?value=3' class="rating3">😶</a>
-						<a href='/addRatingPuzzle?value=4' class="rating4">😶</a>
-						<a href='/addRatingPuzzle?value=5' class="rating5">😶</a>
-					</div>
-				</span> Average rating : 
-				<span class="avgRating" th:utext='${#numbers.formatDecimal(rating,1,2)}'> </span>
-					<br />
-					<span th:if='${@userController.Logged}'>
-					<span th:if='${favourite}'>
-								<a href="/addFavouritePuzzle">
-							<img src='images/favorite.jpg' width='50' height='50' />
-								</a>
-							</span> 
-						<span th:if='${not favourite}'>
-						 <a href="/addFavouritePuzzle">
-						 	<img src='images/notFavorite.jpg' width='50' height='50' />
-						 </a>
-						</span>
-					</span>
-			</div>
+				<p th:utext='${puzzleImageController.message}' />
+				<p><img src='images/PuzzleImage2.jpg' width='70' height='70' /></p>
+				<span th:if='${@userController.Logged}'>
+				<div class="rating">
+<a href='/addRatingPuzzleImage?value=1' class="rating1">😶</a>
+<a href='/addRatingPuzzleImage?value=2' class="rating2">😶</a>
+<a href='/addRatingPuzzleImage?value=3' class="rating3">😶</a>
+<a href='/addRatingPuzzleImage?value=4' class="rating4">😶</a>
+<a href='/addRatingPuzzleImage?value=5' class="rating5">😶</a>
+				</div>
+				</span>
+				Average rating :
+				<span class="avgRating" th:utext='${#numbers.formatDecimal(rating,1,2)}'>
+			</span> 
+			<br />			
+			<span th:if='${@userController.Logged}'>			
+			<span th:if='${favourite}'>
+<a href="/addFavouritePuzzleImage"><img src='images/favorite.jpg' width='50' height='50'/></a>
+			</span>
+			<span th:if='${not favourite}'>
+<a href="/addFavouritePuzzleImage"><img src='images/notFavorite.jpg' width='50' height='50' /></a>
+			</span>			
+			</span>		
+			</div>			
 			<div class="col-4">
 				<p>Top 10 scores</p>
-				<hr />
+				<hr/>
 				<table class="score_table">
 					<tr>
 						<th>Login</th>
@@ -56,11 +56,11 @@
 						<td th:text='${score.value}' />
 					</tr>
 				</table>
-				<hr />
+				<hr/>
 			</div>
 			<div class="col-4">
-				<p>Comments</p>
-				<hr />
+			<p>Comments</p>
+			<hr/>
 				<table class="comment_table">
 					<tr>
 						<th>Login</th>
@@ -73,21 +73,21 @@
 						<td th:text='${comment.createdOn}' />
 					</tr>
 				</table>
-				<hr />
+				<hr/>
 				<br />
 				<span th:if='${@userController.Logged}'>
-					<form action="/addCommentPuzzle" method="post">
-						<label>Add Comment <input type="text" name="newComment"
-							placeholder="Add comment here" />
-						</label>
-						<button type="submit" id="SaveComment">Add</button>
-					</form>
+				<form action="/addCommentPuzzleImage" method="post">
+					<label>Add Comment <input type="text" name="newComment"
+						placeholder="Add comment here" />
+					</label>
+					<button type="submit" id="SaveComment">Add</button>
+				</form>
 				</span>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<br/><br/>
+				<br /> <br />
 			</div>
 		</div>
 		<div class="row">

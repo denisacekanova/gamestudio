@@ -5,56 +5,50 @@
 <meta charset="UTF-8"></meta>
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="css/gameStudio.css" />
-<title>Minesweeper</title>
+<title>GuessNumber</title>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="col-6">
-				<a href='/mines'>New game</a>
+				<a href='/guessNumber'>New game</a>
 			</div>
 			<div class="col-6"></div>
 		</div>
-
 		<div class="row">
-
-			<div class="col-4">
-				<p th:utext='${minesController.render()}' />
-				<p th:utext='${minesController.message}' />
+			<div class="col-4">				
+				<form action="/guessNumber" method="get">
+					<label><input type="text" name="guessedNumber"
+						placeholder="Guess number between 1 and 100 !" style="width:250px"/>
+					</label>
+					<button type="submit" id="CheckNumber">Check !</button>
+				</form>				
+				<p th:utext='${guessNumberController.message}' />
 				<br />
-				 Action to set : <a href='/mines_mark'> <span
-					th:if='${minesController.marking}'>Marking</span> <span
-					th:if='${not minesController.marking}'>Opening</span>
-				</a> 
-				<br />
-<span th:if='${@userController.Logged}'>
+				<span th:if='${@userController.Logged}'>
 				<div class="rating">
-					<a href='/addRatingPuzzle?Rating=1' class="rating1"> 😶 </a> 
-					<a href='/addRatingPuzzle?Rating=2' class="rating2"> 😶 </a>
-					<a href='/addRatingPuzzle?Rating=3' class="rating3"> 😶 </a>
-					<a href='/addRatingPuzzle?Rating=4' class="rating4"> 😶 </a>
-					<a href='/addRatingPuzzle?Rating=5' class="rating5"> 😶 </a>
+<a href='/addRatingGuessNumber?value=1' class="rating1">😶</a>
+<a href='/addRatingGuessNumber?value=2' class="rating2">😶</a>
+<a href='/addRatingGuessNumber?value=3' class="rating3">😶</a>
+<a href='/addRatingGuessNumber?value=4' class="rating4">😶</a>
+<a href='/addRatingGuessNumber?value=5' class="rating5">😶</a>
 				</div>
-</span>
-				Average rating :
-				<span class="avgRating" th:utext='${#numbers.formatDecimal(rating,1,2)}'>
 				</span>
-				
-				<br />
-<span th:if='${@userController.Logged}'>
-				<span th:if='${favourite}'>
-<a href="/addFavouriteMines"><img src='images/favorite.jpg' width='50' height='50'/></a>
+				Average Rating :<span class="avgRating" th:utext='${#numbers.formatDecimal(rating,1,2)}'>
 			</span>
-
+			<br />			
+			<span th:if='${@userController.Logged}'>			
+			<span th:if='${favourite}'>
+<a href="/addFavouriteGuessNumber"><img src='images/favorite.jpg' width='50' height='50'/></a>
+			</span>
 			<span th:if='${not favourite}'>
-<a href="/addFavouriteMines"><img src='images/notFavorite.jpg' width='50' height='50' /></a>
-			</span>
-			</span>
+<a href="/addFavouriteGuessNumber"><img src='images/notFavorite.jpg' width='50' height='50' /></a>
+			</span>			
+			</span>		
 			</div>
 			<div class="col-4">
-
 				<p>Top 10 scores</p>
-				<hr />
+				<hr/>
 				<table class="score_table">
 					<tr>
 						<th>Login</th>
@@ -65,14 +59,11 @@
 						<td th:text='${score.value}' />
 					</tr>
 				</table>
-				<hr />
-
+				<hr/>
 			</div>
 			<div class="col-4">
-
-
-				<p>Comments</p>
-				<hr />
+			<p>Comments</p>
+			<hr/>
 				<table class="comment_table">
 					<tr>
 						<th>Login</th>
@@ -85,10 +76,10 @@
 						<td th:text='${comment.createdOn}' />
 					</tr>
 				</table>
-				<hr />
+				<hr/>
 				<br />
 				<span th:if='${@userController.Logged}'>
-				<form action="/addCommentMines" method="post">
+				<form action="/addCommentGuessNumber" method="post">
 					<label>Add Comment <input type="text" name="newComment"
 						placeholder="Add comment here" />
 					</label>

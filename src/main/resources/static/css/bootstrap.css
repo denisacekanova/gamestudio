@@ -65,12 +65,7 @@
     page-break-inside: avoid;
   }
   
-  h1#gamestudio {
-    orphans: 3;
-    widows: 3;
-    text-align: center;
-    text-color : #0033cc;
-  }
+  
   p,
   h2,
   h3 {
@@ -111,86 +106,7 @@
   box-sizing: border-box;
 }
 
-table#TablePuzzle {
-    border-collapse: separate !important;
-     border-radius: 9px;
-    width: 50%;
-    height: 50%;
-    text-align: center; 
-    font-size: 200%;
-    border: 2px solid #237df8;
-    background-color : white;
-    table-layout: fixed;
-    
-}
 
-tr#puzzleTr {
-    
-    background-color : white;
-    
-   
-}
-table#TableMines {
-    border-collapse: collapse;
-    width: 50%;
-    height: 50%;
-    text-align: center; 
-    
-}
-
-
-table#score_table {
-    border-collapse: collapse;
-    width: 100%;
-    text-align: center;
-    
-}
-table#comment_table {
-    border-collapse: collapse;
-    width: 100%;
-    text-align: center;   
-}
-tr#score_table {
-    
-    width: 100%;
-    text-align: center;
-    border: 1px solid black;
-   
-}
-tr#comment_table {
-    
-    width: 100%;
-    text-align: center;
-    border: 1px solid black;
-   
-}
-th#score_table {
-	font-weight: 900;
-    background-color: #e83e8c;
-    text-align: center;
-    border: 1px solid black;
-   
-    }
- tr#score_table {
-    border-collapse: collapse;
-    width: 100%;
-    text-align: center;
-    border: 1px solid black;
-   
-}
- tr#IdTr, tr#IdTr2, tr#IdTr3, tr#IdTr4 {
-	font-weight: 900;
-    color: #0056b3;
-    text-align: center; 
-    }
-
-td#score_table {
-    text-align: left;
-    padding: 8px;
-    text-align: center;
-    border: 1px solid black;
-   
-}
 
 tr:nth-child(even){background-color: #e6f9ff}
 
@@ -236,11 +152,7 @@ hr {
   overflow: visible;
 }
 
-h1#gamestudio{
-	margin-top: 0;
-  margin-bottom: 0.5rem;
-  color: #0033cc;	
-}
+
 
 h5 {
   margin-top: 0;
@@ -255,26 +167,7 @@ h2, h4, h3, h6 {
   margin-bottom: 0.5rem;
   color: #668cff
 }
-span#ratingP {
-	
-	text-align: left;
-	margin-top: 0;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #668cff;
-   font-style: italic;
-	
-}
-span#ratingM {
-	
-	text-align: left;
-	margin-top: 0;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #668cff;
-   font-style: italic;
-	
-}
+
 p {
   margin-top: 0;
   margin-bottom: 1rem;

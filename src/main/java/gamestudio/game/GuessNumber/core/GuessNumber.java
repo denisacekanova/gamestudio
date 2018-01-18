@@ -12,9 +12,9 @@ public class GuessNumber implements ConsoleGameUI {
 
 	@Override
 	public void run() {
-		
+
 		long startTime = System.currentTimeMillis();
-		
+
 		System.out.println("Zadaj maxim�lne ��slo: ");
 		Scanner inputMaxNum = new Scanner(System.in);
 
@@ -47,11 +47,11 @@ public class GuessNumber implements ConsoleGameUI {
 		} while (win == false);
 		System.out.println("Vyhral si!");
 		long stopTime = System.currentTimeMillis();
-		long totalTime =( stopTime - startTime )/1000;
+		long totalTime = (stopTime - startTime) / 1000;
 		Score score = new Score();
 		score.setUsername(System.getProperty("user.name"));
 		score.setGame(getName());
-		score.setValue((int)totalTime);
+		score.setValue((int) totalTime);
 		System.out.println("Tvoj po�et pokusov bol : " + tries);
 		System.out.println("Tvoje skore je :" + totalTime);
 

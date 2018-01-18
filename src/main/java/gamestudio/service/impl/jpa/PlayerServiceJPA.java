@@ -37,4 +37,17 @@ public class PlayerServiceJPA implements PlayerService {
 			return null;
 		}
 	}
+	
+	@Override
+	public boolean isLogin(String login) {
+
+		try {
+			 entityManager
+					.createQuery("SELECT p FROM Player p WHERE p.login = :login").setParameter("login", login).getSingleResult();
+
+		} catch (NoResultException e) {
+			return false;
+		}
+		return true;
+	}
 }
