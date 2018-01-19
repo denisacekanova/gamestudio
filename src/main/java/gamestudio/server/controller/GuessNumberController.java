@@ -94,7 +94,7 @@ public class GuessNumberController {
 				tries++;
 				if (Integer.parseInt(guessedNumber) == randomNumber) {
 
-					message = "You Won! The secret Number was " + randomNumber + "Your score is "+ (100 - tries) + ". Let's play another game !";
+					message = "You Won! The secret Number was " + randomNumber + ". Your score is "+ (100 - tries) + ". Let's play another game !";
 					{
 
 						if (userController.isLogged())
