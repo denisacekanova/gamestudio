@@ -19,7 +19,7 @@
 			<div class="col-4">				
 				<form action="/guessNumber" method="get">
 					<label><input type="text" name="guessedNumber"
-						placeholder="Guess number between 1 and 100 !" style="width:250px"/>
+						placeholder="Guess number between 1 and 20 !" style="width:250px"/>
 					</label>
 					<button type="submit" id="CheckNumber">Check !</button>
 				</form>				
@@ -34,7 +34,7 @@
 <a href='/addRatingGuessNumber?value=5' class="rating5">😶</a>
 				</div>
 				</span>
-				Average Rating :<span class="avgRating" th:utext='${#numbers.formatDecimal(rating,1,2)}'>
+				Average Rating : <span class="avgRating" th:utext='${#numbers.formatDecimal(rating,1,2)}'>
 			</span>
 			<br />			
 			<span th:if='${@userController.Logged}'>			

@@ -123,7 +123,7 @@ public class MinesController {
 				field.openTile(Integer.parseInt(row), Integer.parseInt(column));
 
 			if (field.getState() == GameState.FAILED) {
-				message = "You Lose !";
+				message = "Failed !";
 			} else if (field.getState() == GameState.SOLVED) {
 				message = "You Won ! Your score is " + ((int) (System.currentTimeMillis() - startTime) / 1000) + "!";
 				if (userController.isLogged())

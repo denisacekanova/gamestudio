@@ -90,7 +90,7 @@ public class GuessNumberController {
 
 		try {
 			// long startTime = System.currentTimeMillis();
-			if (tries < 5) {
+			if (tries < 2) {
 				tries++;
 				if (Integer.parseInt(guessedNumber) == randomNumber) {
 
@@ -104,7 +104,7 @@ public class GuessNumberController {
 							scoreService.addScore(new Score("Guest", "guessNumber", (100 - tries)));
 						}
 					}
-					randomNumber = rand.nextInt(100) + 1;
+					randomNumber = rand.nextInt(20) + 1;
 					tries = 1;
 				} else if (Integer.parseInt(guessedNumber) < randomNumber) {
 					message = "Your guess is too low!";
@@ -113,8 +113,8 @@ public class GuessNumberController {
 
 				}
 			} else {
-				message = "You Lose! The secret Number was " + randomNumber + ". Let's play another game !";
-				randomNumber = rand.nextInt(100) + 1;
+				message = "Failed ! The secret Number was " + randomNumber + ". Let's play another game !";
+				randomNumber = rand.nextInt(20) + 1;
 				tries = 1;
 			}
 
@@ -122,7 +122,7 @@ public class GuessNumberController {
 			// long totalTime = (stopTime - startTime) / 1000;
 
 		} catch (NumberFormatException e) {
-			randomNumber = rand.nextInt(100) + 1;
+			randomNumber = rand.nextInt(20) + 1;
 			tries = 1;
 		}
 
